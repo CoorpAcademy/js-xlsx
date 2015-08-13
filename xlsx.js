@@ -7497,9 +7497,13 @@ function get_cell_style_csf(cellXf) {
     }
 
 
-    return s;
+    return clone_deep(s);
   }
   return null;
+}
+
+function clone_deep(obj) {
+	return JSON.parse(JSON.stringify(obj));
 }
 
 function safe_format(p, fmtid, fillid, opts) {
